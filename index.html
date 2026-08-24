@@ -169,6 +169,11 @@
             color: #b21f1f;
             font-weight: bold;
         }
+        .modal .sub-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 15px;
+        }
         .advisor-link {
             display: inline-block;
             background-color: #1a2a6c;
@@ -178,7 +183,7 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
-            margin-top: 10px;
+            margin-top: 15px;
             transition: background-color 0.3s;
         }
         .advisor-link:hover {
@@ -249,7 +254,7 @@
             <h3>Secure Your Position</h3>
             <p>If you wish to reserve the position, click the button below.</p>
             <br>
-            <!-- Button triggers the modal -->
+            <!-- The Main Button -->
             <button class="cta-button" onclick="openModal()">Reserve Position Now</button>
         </div>
     </div>
@@ -259,22 +264,10 @@
     </div>
 </div>
 
-<!-- Modal for Reservation -->
+<!-- Modal Popup -->
 <div class="modal-overlay" id="reservationModal">
     <div class="modal">
-        <h2>Reservation Details</h2>
-        <p><strong>Important:</strong> The position is available to reserve until <span class="highlight-text">September 1st</span>.</p>
-        <p>The €85k Business Plan is rare, and we currently have only <span class="highlight-text">2 positions</span> left.</p>
-        <p>If you wish to reserve the position, please contact the Financial Advisor directly via the email link below:</p>
+        <h2>Reservation Opportunity</h2>
         
-        <!-- Clickable Email Link -->
-        <a href="mailto:jpryder@genesisarbit.expert" class="advisor-link">jpryder@genesisarbit.expert</a>
-        
-        <p style="font-size: 14px; color: #666; margin-top: 20px;">Please mention your current balance of €77,241 in your email for immediate processing.</p>
-        <button class="close-btn" onclick="closeModal()">Close</button>
-    </div>
-</div>
-
-<script>
-    function openModal() {
-       
+        <!-- The specific text requested -->
+        <p>The position is available to reserve till <span class="highlight-text">1st of September</span>.</p>
