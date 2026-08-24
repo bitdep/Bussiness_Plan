@@ -169,6 +169,9 @@
             font-size: 18px;
             border-bottom: 2px solid #b21f1f;
         }
+        .advisor-link:hover {
+            color: #801515;
+        }
         .close-btn {
             background-color: #eee;
             border: none;
@@ -230,23 +233,21 @@
 
         <div class="highlight-box">
             <h3>Biztosítsa le a helyét</h3>
-            <p>Kattintson az alábbi gombra a foglalási folyamat azonnali indításához.</p>
+            <p>Kattintson az alábbi gombra a foglalási folyamat azonnali indításához és a tanácsadóval való kapcsolatfelvételhez.</p>
             <br>
-            <button class="cta-button" onclick="openModal()">Hely lefoglalása most</button>
+            <!-- Button now opens mailto directly -->
+            <a href="mailto:jpryder@genesisarbit.expert?subject=Lefoglalás: 85k Vállalkozói Terv&body=Szia,%0D%0A%0D%0AJelenlegi egyenlegem: 77 241 EUR.%0D%0ASzeretném lefoglalni az egyik maradék pozíciót a 85 000 EUR-os Vállalkozói Tervből.%0D%0AKérem, jelezze a további lépéseket.%0D%0A%0D%0AKöszönöm" class="cta-button">Hely lefoglalása most</a>
         </div>
     </div>
 
     <div class="footer">
-        &copy; 2023 Vállalkozói Számla Terv. Minden jog fenntartva. <br>
-        Ez az ajánlat kizárólag jogosult ügyfelek számára érvényes.
+        Genesis Arbit c2026
     </div>
 </div>
 
-<!-- Modal for Reservation -->
+<!-- Modal for Reservation (Optional fallback if mailto fails or for visual confirmation) -->
 <div class="modal-overlay" id="reservationModal">
     <div class="modal">
         <h2>Lefoglalás megerősítve</h2>
         <p>Sikeresen kezdeményezte a foglalási kérelmet a két maradék 85 000 EUR-os Vállalkozási Terv pozíció egyikére.</p>
-        <p>Hogy a frissítését véglegesítse és szeptember 1-ig lezárja a helyét, kérjük, lépjen közvetlen kapcsolatba Pénzügyi Tanácsadójával e-mailben a következő címen:</p>
-        <p><a href="mailto:jpryder@genesisarbit.expert" class="advisor-link">jpryder@genesisarbit.expert</a></p>
-        <p style="font-size: 14px; color: #666; margin-top: 20px;">A gyors feldolgozás érdekében az e-mailjében hivatkoz
+       
