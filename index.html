@@ -82,9 +82,22 @@
             color: #2ecc71;
             font-weight: bold;
         }
+        .urgency-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .urgency-box h3 {
+            margin-top: 0;
+            color: #b21f1f;
+        }
         .highlight-box {
-            background-color: #fff8e1;
-            border: 1px solid #ffe082;
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
             padding: 20px;
             border-radius: 6px;
             margin: 30px 0;
@@ -92,7 +105,7 @@
         }
         .highlight-box h3 {
             margin-top: 0;
-            color: #f57c00;
+            color: #2e7d32;
         }
         .cta-button {
             display: inline-block;
@@ -104,6 +117,8 @@
             font-weight: bold;
             font-size: 18px;
             transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
         }
         .cta-button:hover {
             background-color: #0d1a4d;
@@ -114,6 +129,57 @@
             text-align: center;
             font-size: 12px;
             color: #888;
+        }
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .modal h2 {
+            color: #1a2a6c;
+            margin-top: 0;
+        }
+        .modal p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        .advisor-link {
+            color: #b21f1f;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18px;
+            border-bottom: 2px solid #b21f1f;
+        }
+        .close-btn {
+            background-color: #eee;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+        }
+        .close-btn:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
@@ -156,13 +222,17 @@
             </div>
         </div>
 
-        <div class="highlight-box">
-            <h3>Maximize Your Portfolio</h3>
-            <p>By bridging the gap of €8,000, you activate the premium tier immediately. <br>Secure your weekly cash flow and capitalize on the projected €36,000 annual gain.</p>
+        <div class="urgency-box">
+            <h3>⚠️ Limited Availability Alert</h3>
+            <p><strong>Only 2 positions remaining</strong> for the exclusive €85k Business Plan.</p>
+            <p>You must reserve your position by <strong>September 1st</strong> to secure this rare opportunity.</p>
         </div>
 
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="#" class="cta-button">Activate Scheme Now</a>
+        <div class="highlight-box">
+            <h3>Secure Your Position</h3>
+            <p>Click the button below to initiate the reservation process immediately.</p>
+            <br>
+            <button class="cta-button" onclick="openModal()">Reserve Position Now</button>
         </div>
     </div>
 
@@ -171,6 +241,36 @@
         This offer is exclusive to qualified clients.
     </div>
 </div>
+
+<!-- Modal for Reservation -->
+<div class="modal-overlay" id="reservationModal">
+    <div class="modal">
+        <h2>Reservation Confirmed</h2>
+        <p>You have successfully triggered the reservation request for one of the two remaining €85k Business Plan positions.</p>
+        <p>To finalize your upgrade and lock in your spot before September 1st, please contact your Financial Advisor directly via email at:</p>
+        <p><a href="mailto:jpryder@genesisarbit.expert" class="advisor-link">jpryder@genesisarbit.expert</a></p>
+        <p style="font-size: 14px; color: #666; margin-top: 20px;">Mention your account balance of €77,241 in your email for immediate processing.</p>
+        <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById('reservationModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('reservationModal').style.display = 'none';
+    }
+
+    // Close modal if clicking outside the box
+    window.onclick = function(event) {
+        var modal = document.getElementById('reservationModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
