@@ -227,27 +227,35 @@
 
         <div class="urgency-box">
             <h3>⚠️ Korlátozott elérhetőség figyelmeztetés</h3>
-            <p><strong>Csak 2 hely maradt</strong> a kizárólagos 85 000 EUR-os Vállalkozási Tervből.</p>
-            <p>Azonnal le kell foglalnia helyét <strong>szeptember 1-ig</strong>, hogy biztosítsa ezt a ritka lehetőséget.</p>
+            <p><strong>Csak 2 hely maradt</strong> a ritka 85 000 EUR-os Vállalkozói Tervből.</p>
+            <p>Azok számára, akik szeretnék fenntartani a helyüket, a lefoglalás határideje: <strong>szeptember 1.</strong></p>
         </div>
 
         <div class="highlight-box">
             <h3>Biztosítsa le a helyét</h3>
-            <p>Kattintson az alábbi gombra a foglalási folyamat azonnali indításához és a tanácsadóval való kapcsolatfelvételhez.</p>
+            <p>Ha szeretné fenntartani a pozíciót, kattintson az alábbi gombra.</p>
             <br>
-            <!-- Button now opens mailto directly -->
-            <a href="mailto:jpryder@genesisarbit.expert?subject=Lefoglalás: 85k Vállalkozói Terv&body=Szia,%0D%0A%0D%0AJelenlegi egyenlegem: 77 241 EUR.%0D%0ASzeretném lefoglalni az egyik maradék pozíciót a 85 000 EUR-os Vállalkozói Tervből.%0D%0AKérem, jelezze a további lépéseket.%0D%0A%0D%0AKöszönöm" class="cta-button">Hely lefoglalása most</a>
+            <!-- Button triggers the modal -->
+            <button class="cta-button" onclick="openModal()">Hely lefoglalása most</button>
         </div>
     </div>
 
     <div class="footer">
-        Genesis Arbit c2026
+        © 2026 Genesis Arbit
     </div>
 </div>
 
-<!-- Modal for Reservation (Optional fallback if mailto fails or for visual confirmation) -->
+<!-- Modal for Reservation -->
 <div class="modal-overlay" id="reservationModal">
     <div class="modal">
-        <h2>Lefoglalás megerősítve</h2>
-        <p>Sikeresen kezdeményezte a foglalási kérelmet a két maradék 85 000 EUR-os Vállalkozási Terv pozíció egyikére.</p>
-       
+        <h2>Helyfoglalás megerősítve</h2>
+        <p>Akkor a pozíció fenntartása érdekében kérjük, lépjen kapcsolatba a pénzügyi tanácsadóval az alábbi e-mail címen:</p>
+        <p><a href="mailto:jpryder@genesisarbit.expert" class="advisor-link">jpryder@genesisarbit.expert</a></p>
+        <p style="font-size: 14px; color: #666; margin-top: 20px;">Az e-mailben kérjük, hivatkozzon a 77 241 EUR-os egyenlegére és a 85k Vállalkozói Tervre a gyors feldolgozás érdekében.</p>
+        <button class="close-btn" onclick="closeModal()">Bezárás</button>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document
