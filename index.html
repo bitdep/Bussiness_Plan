@@ -3,245 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESMA | Asset Recovery & Provisioning Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <title>Business Account Scheme - Premium Upgrade</title>
     <style>
-        :root {
-            --bg: #0a0b0d;
-            --card: #16181d;
-            --accent: #003399; /* ESMA Blue */
-            --gold: #ffcc00;   /* ESMA Gold */
-            --success: #00ffa3;
-            --warning: #ffcc00;
-            --error: #ff4a4a;
-            --border: rgba(255, 255, 255, 0.08);
-        }
-
         body {
-            background-color: var(--bg);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            padding: 0;
+            color: #333;
         }
-
-        .container { width: 100%; max-width: 500px; padding: 20px; }
-
-        .console-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+        .header p {
+            margin: 10px 0 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .content {
             padding: 40px;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
         }
-
-        /* NEW ESMA LOGO HEADER */
-        .etherscan-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: -40px -40px 30px -40px;
-            padding: 30px 40px;
-            background: #003399; 
-            border-bottom: 4px solid var(--gold);
-            text-align: center;
-        }
-
-        .esma-stars {
-            color: var(--gold);
-            font-size: 20px;
-            letter-spacing: 3px;
-            margin-bottom: 5px;
-        }
-
-        .esma-title {
-            font-weight: 800;
-            font-size: 26px;
-            letter-spacing: 1px;
-            color: white;
-            margin: 0;
-        }
-
-        .esma-subtitle {
-            font-size: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: rgba(255,255,255,0.7);
-            margin-top: 4px;
-        }
-
-        .badge {
-            font-size: 9px;
-            background: var(--gold);
-            color: #003399;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-top: 15px;
-        }
-
-        h1 { font-size: 20px; font-weight: 700; margin: 0 0 10px 0; }
-        
-        .input-box { margin-bottom: 25px; }
-        label { display: block; font-size: 11px; color: #666; margin-bottom: 8px; text-transform: uppercase; font-weight: 700; }
-        
-        input {
-            width: 100%;
-            background: #000;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 16px;
-            color: var(--gold);
-            font-family: 'JetBrains Mono';
-            font-size: 13px;
-            box-sizing: border-box;
-            transition: 0.3s;
-        }
-
-        .btn {
-            width: 100%;
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 18px;
-            border-radius: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.2s;
-        }
-        .btn:hover { background: #0044cc; transform: translateY(-1px); }
-
-        #loader-view, #result-view, #bank-view, #final-view { display: none; }
-
-        .crypto-logs {
-            font-family: 'JetBrains Mono';
-            font-size: 11px;
-            color: #555;
-            text-align: left;
-            background: #000;
+        .balance-card {
+            background-color: #f9f9f9;
+            border-left: 5px solid #1a2a6c;
             padding: 20px;
-            border-radius: 12px;
-            height: 120px;
-            line-height: 1.8;
-            margin-top: 20px;
-            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 4px;
         }
-
-        .status-banner {
-            background: rgba(0, 255, 163, 0.05);
-            border: 1px solid rgba(0, 255, 163, 0.1);
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 25px;
+        .balance-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .status-label { font-family: 'JetBrains Mono'; font-weight: 800; color: var(--success); font-size: 14px; }
-
-        .data-table { margin-bottom: 25px; }
+        .balance-amount {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1a2a6c;
+            margin: 10px 0;
+        }
+        .scheme-details {
+            margin-bottom: 40px;
+        }
+        .scheme-title {
+            font-size: 22px;
+            color: #b21f1f;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
         .data-row {
             display: flex;
             justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 13px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
         }
-        .data-row span:first-child { color: #888; }
-
-        .checkbox-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin: 20px 0;
-            font-size: 12px;
-            color: #aaa;
-            text-align: left;
+        .data-label {
+            font-weight: bold;
+            color: #444;
         }
-        .checkbox-container input { width: auto; margin-top: 3px; }
-
-        .support-action-card {
-            background: linear-gradient(145deg, #1a1d23, #16181d);
-            border: 1px solid var(--gold);
-            padding: 25px;
-            border-radius: 16px;
-            margin-top: 25px;
+        .data-value {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background-color: #fff8e1;
+            border: 1px solid #ffe082;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 30px 0;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 204, 0, 0.1);
         }
-        
-        .support-action-card b { color: var(--gold); font-family: 'JetBrains Mono'; font-size: 16px; }
-        
-        .support-email-link {
+        .highlight-box h3 {
+            margin-top: 0;
+            color: #f57c00;
+        }
+        .cta-button {
             display: inline-block;
-            margin-top: 15px;
-            color: #003399;
+            background-color: #1a2a6c;
+            color: white;
+            padding: 15px 40px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            background: var(--gold);
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: 0.3s;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.3s;
         }
-        .support-email-link:hover { filter: brightness(1.1); }
-
-        .spinner {
-            width: 30px; height: 30px;
-            border: 2px solid rgba(255,255,255,0.1);
-            border-top: 2px solid var(--gold);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 15px;
+        .cta-button:hover {
+            background-color: #0d1a4d;
         }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .footer {
+            background-color: #eee;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="console-card">
-        <div class="etherscan-header">
-            <div class="esma-stars">★★★★★★</div>
-            <div class="esma-title">ESMA</div>
-            <div class="esma-subtitle">European Securities and Markets Authority</div>
-            <div class="badge">Asset Recovery Division</div>
+    <div class="header">
+        <h1>Business Account Scheme</h1>
+        <p>Unlock Higher Returns & Regular Weekly Payments</p>
+    </div>
+
+    <div class="content">
+        <div class="balance-card">
+            <div class="balance-label">Current Account Balance</div>
+            <div class="balance-amount">€77,241.00</div>
         </div>
 
-        <div id="check-view">
-            <h1>Access Recovery Portal</h1>
-            <p style="color: #666; font-size: 13px; margin-bottom: 30px;">Enter your registered email to synchronize assets.</p>
-            <div class="input-box">
-                <label>Email Address</label>
-                <input type="email" id="client-email" placeholder="email@example.com" autocomplete="off">
+        <div class="scheme-details">
+            <h2 class="scheme-title">Upgrade Opportunity</h2>
+            
+            <div class="data-row">
+                <span class="data-label">Required Additional Deposit:</span>
+                <span class="data-value">€8,000.00</span>
             </div>
-            <button class="btn" onclick="runAudit()">Access Portfolio</button>
-        </div>
-
-        <div id="loader-view">
-            <div class="spinner"></div>
-            <h2 style="font-size: 16px;">Scanning Blockchain Clusters...</h2>
-            <div class="crypto-logs" id="log-box"></div>
-        </div>
-
-        <div id="result-view">
-            <div class="status-banner">
-                <div class="status-label">ASSETS DETECTED</div>
+            <div class="data-row">
+                <span class="data-label">Target Balance Threshold:</span>
+                <span class="data-value">€85,000.00</span>
             </div>
-            <div class="data-table">
-                <div class="data-row"><span>Detected Wallet</span><span id="display-wallet">0x71...f6d8</span></div>
-                <div class="data-row"><span>Portfolio Value</span><span id="display-eur" style="color: var(--success); font-weight:bold;"></span></div>
-                <div class="data-row"><span>ETH Equivalent</span><span id="display-eth"></span></div>
+            <div class="data-row">
+                <span class="data-label">Payout Frequency:</span>
+                <span class="data-value">Weekly</span>
             </div>
-            <button class="btn" onclick="showBankForm()">Withdrawal</button>
+            <div class="data-row">
+                <span class="data-label">Expected Monthly Return:</span>
+                <span class="data-value">€2,000 - €3,000</span>
+            </div>
+            <div class="data-row">
+                <span class="data-label">Projected Annual Income:</span>
+                <span class="data-value">Up to €36,000</span>
+            </div>
         </div>
 
-        <div id="bank-view">
-            <h1>Withdrawal Setup</h1>
-           
+        <div class="highlight-box">
+            <h3>Maximize Your Portfolio</h3>
+            <p>By bridging the gap of €8,000, you activate the premium tier immediately. <br>Secure your weekly cash flow and capitalize on the projected €36,000 annual gain.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="#" class="cta-button">Activate Scheme Now</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2023 Business Account Scheme. All rights reserved. <br>
+        This offer is exclusive to qualified clients.
+    </div>
+</div>
+
+</body>
+</html>
