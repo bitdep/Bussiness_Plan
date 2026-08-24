@@ -130,6 +130,7 @@
             font-size: 12px;
             color: #888;
         }
+        
         /* Modal Styles */
         .modal-overlay {
             display: none;
@@ -156,24 +157,33 @@
         .modal h2 {
             color: #1a2a6c;
             margin-top: 0;
+            font-size: 24px;
         }
         .modal p {
             font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 25px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #444;
         }
-        .advisor-link {
+        .modal .highlight-text {
             color: #b21f1f;
             font-weight: bold;
-            text-decoration: none;
-            font-size: 18px;
-            border-bottom: 2px solid #b21f1f;
+        }
+        .advisor-link {
             display: inline-block;
-            margin: 10px 0;
+            background-color: #1a2a6c;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
         }
         .advisor-link:hover {
-            color: #801515;
-            border-bottom-color: #801515;
+            background-color: #0d1a4d;
+            color: white;
         }
         .close-btn {
             background-color: #eee;
@@ -183,6 +193,7 @@
             cursor: pointer;
             color: #333;
             font-weight: bold;
+            margin-top: 20px;
         }
         .close-btn:hover {
             background-color: #ddd;
@@ -229,7 +240,7 @@
         </div>
 
         <div class="urgency-box">
-            <h3>⚠️ Korlátozott elérhetőség figyelmeztetés</h3>
+            <h3>⚠️ Korlátozott elérhetőség</h3>
             <p><strong>Csak 2 hely maradt</strong> a ritka 85 000 EUR-os Vállalkozói Tervből.</p>
             <p>Azok számára, akik szeretnék fenntartani a helyüket, a lefoglalás határideje: <strong>szeptember 1.</strong></p>
         </div>
@@ -249,12 +260,4 @@
 </div>
 
 <!-- Modal for Reservation -->
-<div class="modal-overlay" id="reservationModal">
-    <div class="modal">
-        <h2>Helyfoglalás megerősítve</h2>
-        <p>Akkor a pozíció fenntartása érdekében kérjük, lépjen kapcsolatba a pénzügyi tanácsadóval az alábbi e-mail címen:</p>
-        
-        <!-- Clickable Email Link -->
-        <a href="mailto:jpryder@genesisarbit.expert" class="advisor-link">jpryder@genesisarbit.expert</a>
-        
-        <p style="font-size: 14px; color: #666; margin-top: 20px;">Az e-mailben kérjük, hivatkozz
+<div class="modal-overlay
