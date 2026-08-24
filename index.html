@@ -3,259 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vállalkozói Számla Terv - Prémium Frissítés</title>
+    <title>Üzleti Számla Aktiválása</title>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        .header {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
-        .header p {
-            margin: 10px 0 0;
-            font-size: 16px;
-            opacity: 0.9;
-        }
-        .content {
-            padding: 40px;
-        }
-        .balance-card {
-            background-color: #f9f9f9;
-            border-left: 5px solid #1a2a6c;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 4px;
-        }
-        .balance-label {
-            font-size: 14px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .balance-amount {
-            font-size: 36px;
-            font-weight: bold;
-            color: #1a2a6c;
-            margin: 10px 0;
-        }
-        .scheme-details {
-            margin-bottom: 40px;
-        }
-        .scheme-title {
-            font-size: 22px;
-            color: #b21f1f;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .data-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .data-label {
-            font-weight: bold;
-            color: #444;
-        }
-        .data-value {
-            color: #2ecc71;
-            font-weight: bold;
-        }
-        .urgency-box {
-            background-color: #fff3cd;
-            border: 1px solid #ffeeba;
-            color: #856404;
-            padding: 20px;
-            border-radius: 6px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        .urgency-box h3 {
-            margin-top: 0;
-            color: #b21f1f;
-        }
-        .highlight-box {
-            background-color: #e8f5e9;
-            border: 1px solid #c8e6c9;
-            padding: 20px;
-            border-radius: 6px;
-            margin: 30px 0;
-            text-align: center;
-        }
-        .highlight-box h3 {
-            margin-top: 0;
-            color: #2e7d32;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #1a2a6c;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 18px;
-            transition: background-color 0.3s;
-            cursor: pointer;
-            border: none;
-            max-width: 90%;
-            word-wrap: break-word;
-        }
-        .cta-button:hover {
-            background-color: #0d1a4d;
-        }
-        .footer {
-            background-color: #eee;
-            padding: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #888;
-        }
-        
-        /* Modal Styles */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            text-align: center;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            position: relative;
-        }
-        .modal h2 {
-            color: #1a2a6c;
-            margin-top: 0;
-            font-size: 24px;
-        }
-        .modal p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: #444;
-        }
-        .modal .highlight-text {
-            color: #b21f1f;
-            font-weight: bold;
-        }
-        .modal .sub-text {
-            font-size: 14px;
-            color: #666;
-            margin-top: 15px;
-        }
-        .advisor-link {
-            display: inline-block;
-            background-color: #1a2a6c;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            margin-top: 15px;
-            transition: background-color 0.3s;
-            word-break: break-all;
-        }
-        .advisor-link:hover {
-            background-color: #0d1a4d;
-            color: white;
-        }
-        .close-btn {
-            background-color: #eee;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            color: #333;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .close-btn:hover {
-            background-color: #ddd;
-        }
+        body { font-family: 'Inter', system-ui, sans-serif; background: #f1f5f9; padding: 20px; margin: 0; }
+        .container { max-width: 720px; margin: 0 auto; padding: 32px; color: #1a1a2e; background: #ffffff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+        .header { text-align: center; margin-bottom: 36px; }
+        .badge { display: inline-block; background: linear-gradient(135deg, #0f3460, #16213e); color: #fff; padding: 10px 28px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        h1 { font-size: 28px; font-weight: 700; margin: 18px 0 8px; color: #16213e; }
+        .subtitle { color: #6b7280; font-size: 15px; margin: 0; }
+        .status-card { background: #f8fafc; border-radius: 12px; padding: 24px; margin-bottom: 24px; border-left: 4px solid #0f3460; }
+        .status-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+        .status-label { margin: 0 0 4px; font-size: 13px; color: #6b7280; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .status-value { margin: 0; font-size: 28px; font-weight: 700; color: #16213e; }
+        .status-value-green { color: #059669; }
+        .arrow { text-align: center; font-size: 24px; color: #0f3460; }
+        .divider { margin-top: 16px; padding-top: 16px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center; }
+        .deposit-label { font-size: 14px; color: #475569; font-weight: 500; }
+        .deposit-value { font-size: 20px; font-weight: 700; color: #dc2626; }
+        h2 { font-size: 18px; font-weight: 700; color: #16213e; margin: 0 0 16px; }
+        .card-grid { display: grid; gap: 14px; margin-bottom: 28px; }
+        .info-card { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 18px; }
+        .icon-box { min-width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+        .icon-blue { background: #dbeafe; }
+        .icon-green { background: #dcfce7; }
+        .icon-yellow { background: #fef3c7; }
+        .icon-pink { background: #fce7f3; }
+        .card-title { margin: 0 0 4px; font-weight: 600; color: #16213e; font-size: 15px; }
+        .card-text { margin: 0; color: #64748b; font-size: 14px; line-height: 1.5; }
+        .table-wrap { background: #f8fafc; border-radius: 12px; overflow: hidden; margin-bottom: 28px; border: 1px solid #e2e8f0; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        thead { background: #16213e; color: #fff; }
+        th { padding: 14px 18px; text-align: left; font-weight: 600; }
+        th.right { text-align: right; }
+        td { padding: 14px 18px; }
+        td.right { text-align: right; font-weight: 600; color: #16213e; }
+        td.bold-green { text-align: right; font-weight: 700; color: #059669; }
+        tr { border-bottom: 1px solid #e2e8f0; }
+        tr.white { background: #fff; }
+        .highlight-box { background: linear-gradient(135deg, #0f3460, #16213e); border-radius: 12px; padding: 24px; color: #fff; margin-bottom: 28px; }
+        .highlight-box h3 { margin: 0 0 12px; font-size: 16px; font-weight: 700; }
+        .highlight-box p { margin: 0 0 16px; font-size: 14px; line-height: 1.7; opacity: 0.95; }
+        .cta-box { text-align: center; padding: 20px; background: #f0fdf4; border-radius: 12px; border: 1px dashed #86efac; }
+        .cta-title { margin: 0 0 12px; font-size: 15px; font-weight: 600; color: #166534; }
+        .cta-text { margin: 0; font-size: 14px; color: #15803d; }
     </style>
 </head>
 <body>
 
 <div class="container">
+
+    <!-- Fejléc -->
     <div class="header">
-        <h1>Vállalkozói Számla Terv</h1>
-        <p>Bontsa ki a magasabb hozamokat és a heti kifizetéseket</p>
+        <div class="badge">Exkluzív Lehetőség</div>
+        <h1>Üzleti Számla Aktiválása</h1>
+        <p class="subtitle">Stratégiai lépés a magasabb hozamok és a rendszeres jövedelem felé</p>
     </div>
 
-    <div class="content">
-        <div class="balance-card">
-            <div class="balance-label">Jelenlegi számlaegyenleg</div>
-            <div class="balance-amount">77 241,00 EUR</div>
-        </div>
-
-        <div class="scheme-details">
-            <h2 class="scheme-title">Frissítési lehetőség</h2>
-            
-            <div class="data-row">
-                <span class="data-label">Követelmény: további befizetés</span>
-                <span class="data-value">8 000,00 EUR</span>
+    <!-- Jelenlegi státusz kártya -->
+    <div class="status-card">
+        <div class="status-row">
+            <div>
+                <p class="status-label">Jelenlegi Egyenleg</p>
+                <p class="status-value">77 241 €</p>
             </div>
-            <div class="data-row">
-                <span class="data-label">Cél egyenleg küszöbérték:</span>
-                <span class="data-value">85 000,00 EUR</span>
-            </div>
-            <div class="data-row">
-                <span class="data-label">Kifizetési gyakoriság:</span>
-                <span class="data-value">Heti</span>
-            </div>
-            <div class="data-row">
-                <span class="data-label">Várható havi hozam:</span>
-                <span class="data-value">2 000 - 3 000 EUR</span>
-            </div>
-            <div class="data-row">
-                <span class="data-label">Kilátásos éves jövedelem:</span>
-                <span class="data-value">Évi akár 36 000 EUR</span>
+            <div class="arrow">→</div>
+            <div style="text-align: right;">
+                <p class="status-label">Célégyenleg</p>
+                <p class="status-value status-value-green">85 000 €</p>
             </div>
         </div>
+        <div class="divider">
+            <span class="deposit-label">Szükséges további befizetés</span>
+            <span class="deposit-value">8 000 €</span>
+        </div>
+    </div>
 
-        <div class="urgency-box">
-            <h3>⚠️ Korlátozott elérhetőség</h3>
-            <p><strong>Csak 2 hely maradt</strong> a ritka 85 000 EUR-os Vállalkozói Tervből.</p>
-            <p>Azok számára, akik szeretnék fenntartani a helyüket, a lefoglalás határideje: <strong>szeptember 1.</strong></p>
+    <!-- Miért érdemes -->
+    <h2>Miért érdemes ezt a befektetést megtenni</h2>
+
+    <div class="card-grid">
+        
+        <div class="info-card">
+            <div class="icon-box icon-blue">💰</div>
+            <div>
+                <p class="card-title">Azonnali hozzáférés a heti kifizetésekhez</p>
+                <p class="card-text">Az aktiválás után azonnal <strong>heti kifizetéseket</strong> kezd kapni — tőkéjét állandó jövedelemforrássá alakítva, ahelyett, hogy tétlenül állna.</p>
+            </div>
         </div>
 
-        <div class="highlight-box">
-            <h3>Biztosítsa le a helyét</h3>
-            <p>Ha szeretné fenntartani a pozíciót, kérjük, lépjen kapcsolatba a pénzügyi tanácsadójával.</p>
-            <br>
-            <!-- The Main Button with New Name -->
-            <button class="cta-button
+        <div class="info-card">
+            <div class="icon-box icon-green">📈</div>
+            <div>
+                <p class="card-title">Magas havi hozamok</p>
+                <p class="card-text">A várható hozam <strong>2 000 – 3 000 € havonta</strong>. Ez a teljes 85 000 € tőkére vetítve <strong>28% – 42%-os éves hozamot</strong> jelent.</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="icon-box icon-yellow">🔄</div>
+            <div>
+                <p class="card-title">Visszatérülés mindössze 3–4 hónap alatt</p>
+                <p class="card-text">A 8 000 €-os további befektetését a hozamokból körülbelül <strong>3–4 hónap alatt</strong> visszakapja. Minden, ami azután érkezik, tiszta nyereség.</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="icon-box icon-pink">🎯</div>
+            <div>
+                <p class="card-title">Már 91%-nál tart</p>
+                <p class="card-text">A 77 241 €-val már elkötelezte magát, a további 8 000 € mindössze a tőke <strong>9,4%-a</strong> — mégis 100%-ban feloldja az Üzleti Számla összes előnyét.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 12 hónapos előrejelzés -->
+    <h2>12 hónapos jövedelem-előrejelzés</h2>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Forgatókönyv</th>
+                    <th class="right">Havi hozam</th>
+                    <th class="right">Éves összesen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="color: #475569;">Konzervatív</td>
+                    <td class="right">2 000 €</td>
+                    <td class="bold-green">24 000 €</td>
+                </tr>
+                <tr class="white">
+                    <td style="color: #475569;">Optimista</td>
+                    <td class="right">3 000 €</td>
+                    <td class="bold-green">36 000 €</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- A lényeg doboz -->
+    <div class="highlight-box">
+        <h3>A lényeg</h3>
+        <p>
+            Ha ma befizeti a <strong>8 000 €-t</strong>, aktivál egy rendszert, amely a következő 12 hónapban akár <strong>36 000 €-t</strong> is termelhet. 
+            A további befektetését kevesebb, mint 4 hónap alatt visszakapja, a fennmaradó 8+ hónap pedig tiszta, ismétlődő jövedelmet hoz.
+        </p>
+        <p>
+            Enélkül a lépés nélkül a jelenlegi egyenlege tétlen marad az Üzleti Számla előnyei szempontjából. A kérdés nem az, hogy megengedheti-e magának a 8 000 €-os befektetést — 
+            hanem az, hogy megengedheti-e magának, hogy <em>ne</em> tegye meg.
+        </p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+        <p class="cta-title">Készen áll az Üzleti Számla aktiválására?</p>
+        <p class="cta-text">Válaszoljon erre az üzenetre, vagy vegye fel velünk a kapcsolatot a 8 000 € befizetéséhez, és kezdje el a heti keresetet.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
