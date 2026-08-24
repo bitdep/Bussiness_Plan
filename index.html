@@ -168,9 +168,12 @@
             text-decoration: none;
             font-size: 18px;
             border-bottom: 2px solid #b21f1f;
+            display: inline-block;
+            margin: 10px 0;
         }
         .advisor-link:hover {
             color: #801515;
+            border-bottom-color: #801515;
         }
         .close-btn {
             background-color: #eee;
@@ -250,12 +253,8 @@
     <div class="modal">
         <h2>Helyfoglalás megerősítve</h2>
         <p>Akkor a pozíció fenntartása érdekében kérjük, lépjen kapcsolatba a pénzügyi tanácsadóval az alábbi e-mail címen:</p>
-        <p><a href="mailto:jpryder@genesisarbit.expert" class="advisor-link">jpryder@genesisarbit.expert</a></p>
-        <p style="font-size: 14px; color: #666; margin-top: 20px;">Az e-mailben kérjük, hivatkozzon a 77 241 EUR-os egyenlegére és a 85k Vállalkozói Tervre a gyors feldolgozás érdekében.</p>
-        <button class="close-btn" onclick="closeModal()">Bezárás</button>
-    </div>
-</div>
-
-<script>
-    function openModal() {
-        document
+        
+        <!-- Clickable Email Link -->
+        <a href="mailto:jpryder@genesisarbit.expert" class="advisor-link">jpryder@genesisarbit.expert</a>
+        
+        <p style="font-size: 14px; color: #666; margin-top: 20px;">Az e-mailben kérjük, hivatkozz
